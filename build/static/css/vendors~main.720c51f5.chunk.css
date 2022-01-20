@@ -1,0 +1,513 @@
+:root {
+  --adm-color-primary: #1677ff;
+  --adm-color-success: #00b578;
+  --adm-color-warning: #ff8f1f;
+  --adm-color-danger: #ff3141;
+  --adm-color-white: #ffffff;
+  --adm-color-weak: #999999;
+  --adm-color-light: #cccccc;
+  --adm-border-color: #eeeeee;
+  --adm-font-size-main: 0.346667rem;
+  --adm-color-text: #333333;
+  --adm-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
+    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+:root {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  color: #333333;
+  color: var(--adm-color-text);
+  font-size: 0.346667rem;
+  font-size: var(--adm-font-size-main);
+  font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
+    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  font-family: var(--adm-font-family);
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  color: #1677ff;
+  color: var(--adm-color-primary);
+  transition: opacity ease-in-out 0.2s;
+}
+
+a:active {
+  opacity: 0.8;
+}
+
+.adm-plain-anchor {
+  color: unset;
+  transition: none;
+}
+
+.adm-plain-anchor:active {
+  opacity: unset;
+}
+
+body.adm-overflow-hidden {
+  overflow: hidden !important;
+}
+
+div.adm-px-tester {
+  --size: 1;
+  height: calc(var(--size) / 2 * 0.053333rem);
+  width: 0;
+  position: fixed;
+  right: -100vw;
+  bottom: -100vh;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+.adm-button {
+  --color: var(--adm-color-white);
+  --text-color: var(--adm-button-text-color, var(--adm-color-text));
+  --background-color: var(--adm-button-background-color, var(--adm-color-white));
+  --border-radius: var(--adm-button-border-radius, 0.106667rem);
+  --border-width: var(--adm-button-border-width, 0.026667rem);
+  --border-style: var(--adm-button-border-style, solid);
+  --border-color: var(--adm-button-border-color, var(--adm-border-color));
+  color: var(--text-color);
+  background-color: var(--background-color);
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  height: auto;
+  padding: 0.213333rem 0.32rem;
+  margin: 0;
+  font-size: 0.4rem;
+  line-height: 1.4;
+  text-align: center;
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: opacity ease 0.15s;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.adm-button:focus {
+  outline: none;
+}
+
+.adm-button::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-color: #000;
+  border-radius: inherit;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  content: ' ';
+  box-sizing: content-box;
+}
+
+.adm-button:active::before {
+  opacity: 0.08;
+}
+
+.adm-button-default.adm-button-fill-outline {
+  --background-color: transparent;
+  --border-color: var(--adm-color-text);
+}
+
+.adm-button-default.adm-button-fill-none {
+  --background-color: transparent;
+  --border-color: transparent;
+}
+
+.adm-button:not(.adm-button-default) {
+  --text-color: var(--adm-color-white);
+  --background-color: var(--color);
+  --border-color: var(--color);
+}
+
+.adm-button:not(.adm-button-default).adm-button-fill-outline {
+  --text-color: var(--color);
+  --background-color: transparent;
+}
+
+.adm-button:not(.adm-button-default).adm-button-fill-none {
+  --text-color: var(--color);
+  --background-color: transparent;
+  --border-color: transparent;
+}
+
+.adm-button-primary {
+  --color: var(--adm-color-primary);
+}
+
+.adm-button-success {
+  --color: var(--adm-color-success);
+}
+
+.adm-button-danger {
+  --color: var(--adm-color-danger);
+}
+
+.adm-button-warning {
+  --color: var(--adm-color-warning);
+}
+
+.adm-button-block {
+  display: block;
+  width: 100%;
+}
+
+.adm-button-disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.adm-button-disabled:active::before {
+  display: none;
+}
+
+.adm-button.adm-button-mini {
+  padding-top: 0.08rem;
+  padding-bottom: 0.08rem;
+  font-size: 0.346667rem;
+}
+
+.adm-button.adm-button-mini.adm-button-shape-rounded {
+  padding-left: 0.24rem;
+  padding-right: 0.24rem;
+}
+
+.adm-button.adm-button-small {
+  padding-top: 0.08rem;
+  padding-bottom: 0.08rem;
+  font-size: 0.4rem;
+}
+
+.adm-button.adm-button-large {
+  padding-top: 0.293333rem;
+  padding-bottom: 0.293333rem;
+  font-size: 0.48rem;
+}
+
+.adm-button.adm-button-shape-rounded {
+  --border-radius: 26.666667rem;
+}
+
+.adm-button.adm-button-shape-rectangular {
+  --border-radius: 0;
+}
+
+.adm-button-loading {
+  vertical-align: bottom;
+}
+
+.adm-button-loading-wrapper {
+  display: flex;
+  height: 1.4em;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm-button-loading-wrapper > .adm-loading {
+  opacity: 0.6;
+}
+.adm-loading {
+  display: inline-block;
+}
+.adm-dialog {
+  --z-index: var(--adm-dialog-z-index, 1000);
+  position: fixed;
+  z-index: var(--z-index);
+}
+
+.adm-dialog .adm-dialog-mask {
+  z-index: 0;
+}
+
+.adm-dialog-wrap {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 75vw;
+  max-width: 13.333333rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.adm-dialog-main {
+  width: 100%;
+  font-size: 0.373333rem;
+  background-color: white;
+  border-radius: 0.213333rem;
+  overflow: hidden;
+}
+
+.adm-dialog-main .adm-dialog-body {
+  padding: 0.533333rem 0.32rem;
+}
+
+.adm-dialog-main .adm-dialog-body-header-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.adm-dialog-main .adm-dialog-body-title {
+  font-weight: bold;
+  font-size: 0.48rem;
+  line-height: 0.666667rem;
+  text-align: center;
+}
+
+.adm-dialog-main .adm-dialog-body-content {
+  max-height: 70vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 0.4rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.adm-dialog-main .adm-dialog-footer {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.adm-dialog-main .adm-dialog-footer .adm-dialog-action-row {
+  display: flex;
+  align-items: stretch;
+  border-top: 0.013333rem solid var(--adm-border-color);
+}
+
+.adm-dialog-main .adm-dialog-footer .adm-dialog-action-row > * {
+  flex: 1 1;
+}
+
+.adm-dialog-main .adm-dialog-footer .adm-dialog-action-row > .adm-dialog-button {
+  padding: 0.266667rem;
+  font-size: 0.48rem;
+  line-height: 0.666667rem;
+  border-radius: 0;
+  border-right: solid 0.013333rem var(--adm-border-color);
+}
+
+.adm-dialog-main .adm-dialog-footer .adm-dialog-action-row > .adm-dialog-button-bold {
+  font-weight: bold;
+}
+
+.adm-dialog-main .adm-dialog-footer .adm-dialog-action-row > .adm-dialog-button:last-child {
+  border-right: none;
+}
+.adm-mask {
+  --z-index: var(--adm-mask-z-index, 1000);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index);
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.adm-mask-aria-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.adm-mask-content {
+  z-index: 1;
+}
+.adm-image {
+  --width: var(--adm-image-width, auto);
+  --height: var(--adm-image-height, auto);
+  width: var(--width);
+  height: var(--height);
+  display: inline-block;
+  overflow: hidden;
+}
+
+.adm-image-img {
+  width: 100%;
+  height: 100%;
+}
+
+.adm-image-tip {
+  position: relative;
+  background-color: #f3f3f3;
+  height: 100%;
+  min-height: 0.64rem;
+  min-width: 0.64rem;
+}
+
+.adm-image-tip > .antd-mobile-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: var(--adm-color-weak);
+}
+.adm-space-item {
+  flex: none;
+}
+
+.adm-space {
+  display: inline-flex;
+  --gap: 0.213333rem;
+  --gap-vertical: var(--gap);
+  --gap-horizontal: var(--gap);
+}
+
+.adm-space-vertical {
+  flex-direction: column;
+}
+
+.adm-space-vertical > .adm-space-item {
+  margin-bottom: var(--gap-vertical);
+}
+
+.adm-space-vertical > .adm-space-item:last-child {
+  margin-bottom: 0;
+}
+
+.adm-space-horizontal {
+  flex-direction: row;
+}
+
+.adm-space-horizontal > .adm-space-item {
+  margin-right: var(--gap-horizontal);
+}
+
+.adm-space-horizontal > .adm-space-item:last-child {
+  margin-right: 0;
+}
+
+.adm-space-horizontal.adm-space-wrap {
+  flex-wrap: wrap;
+  margin-bottom: calc(var(--gap-vertical) * -1);
+}
+
+.adm-space-horizontal.adm-space-wrap > .adm-space-item {
+  padding-bottom: var(--gap-vertical);
+}
+
+.adm-space.adm-space-block {
+  display: flex;
+}
+
+.adm-space-align-center {
+  align-items: center;
+}
+
+.adm-space-align-start {
+  align-items: flex-start;
+}
+
+.adm-space-align-end {
+  align-items: flex-end;
+}
+
+.adm-space-align-baseline {
+  align-items: baseline;
+}
+
+.adm-space-justify-center {
+  justify-content: center;
+}
+
+.adm-space-justify-start {
+  justify-content: flex-start;
+}
+
+.adm-space-justify-end {
+  justify-content: flex-end;
+}
+
+.adm-space-justify-between {
+  justify-content: space-between;
+}
+
+.adm-space-justify-around {
+  justify-content: space-around;
+}
+
+.adm-space-justify-evenly {
+  justify-content: space-evenly;
+}
+
+.adm-space-justify-stretch {
+  justify-content: stretch;
+}
+.adm-auto-center {
+  display: flex;
+  justify-content: center;
+}
+
+.adm-auto-center-content {
+  flex: 0 1 auto;
+}
+.adm-toast-mask .adm-toast-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.adm-toast-mask .adm-toast-main {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: auto;
+  min-width: 2.56rem;
+  max-width: 70%;
+  max-height: 70%;
+  overflow: auto;
+  color: white;
+  word-break: break-all;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.213333rem;
+  pointer-events: all;
+  font-size: 0.4rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.adm-toast-mask .adm-toast-main-text {
+  padding: 0.32rem;
+}
+
+.adm-toast-mask .adm-toast-main-icon {
+  padding: 0.933333rem 1.066667rem;
+}
+
+.adm-toast-mask .adm-toast-main-icon .adm-toast-icon {
+  text-align: center;
+  margin-bottom: 0.213333rem;
+  font-size: 0.96rem;
+  line-height: 1;
+}
+
+.adm-toast-loading {
+  font-size: 0.64rem;
+}

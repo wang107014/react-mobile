@@ -1,0 +1,81 @@
+{
+  "name": "react-mobile",
+  "author": "BOE",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.16.7",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^26.0.22",
+    "@types/mockjs": "^1.0.5",
+    "@types/node": "^12.20.10",
+    "@types/qrcode.react": "^1.0.2",
+    "@types/qs": "^6.9.7",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-redux": "^7.1.21",
+    "@types/redux-promise": "^0.5.29",
+    "ahooks": "^3.1.5",
+    "antd-mobile": "^5.0.0-rc.16",
+    "bootstrap": "^4.6.0",
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "compression-webpack-plugin": "^5.0.1",
+    "customize-cra": "^1.0.0",
+    "dva-core": "^2.0.4",
+    "dva-loading": "^3.0.22",
+    "dva-model-persist": "^1.0.0",
+    "dva-type": "^1.0.3",
+    "figlet": "^1.5.2",
+    "less": "^4.0.0",
+    "less-loader": "^7.2.1",
+    "mockjs": "^1.1.0",
+    "postcss-px2rem": "^0.3.0",
+    "qrcode.react": "^1.0.1",
+    "qs": "^6.10.2",
+    "react": "^17.0.2",
+    "react-app-rewired": "^2.1.11",
+    "react-dom": "^17.0.2",
+    "react-draggable-tags": "^1.0.6",
+    "react-hot-loader": "^4.13.0",
+    "react-keeper": "^2.2.3",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux-persist": "^6.0.0",
+    "redux-promise": "^0.6.0",
+    "typescript": "^4.2.4",
+    "web-vitals": "^1.1.1",
+    "webpack-bundle-analyzer": "^4.5.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start ",
+    "start:pre": "cross-env REACT_APP_ENV=pre react-app-rewired start",
+    "build": "react-app-rewired build",
+    "build:pre": "cross-env REACT_APP_ENV=pre react-app-rewired start",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.7",
+    "cross-env": "^7.0.3",
+    "lib-flexible": "^0.3.2",
+    "postcss-px2rem-exclude": "^0.0.6"
+  }
+}
